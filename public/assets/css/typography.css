@@ -94,7 +94,7 @@ th { font-weight: 600; }
 /*----------------------------------------------
 loading
 ------------------------------------------------*/
-#loading { background: #ffffff url("../images/loader.gif") no-repeat scroll center center; background-size: 15%; height: 100%; width: 100%; position: fixed; margin-top: 0px; top: 0px; left: 0px; bottom: 0px; overflow: hidden !important; right: 0px; z-index: 999999; }
+#loading { background: #ffffff url("../images/hut.gif") no-repeat scroll center center; background-size: 50%; height: 100%; width: 100%; position: fixed; margin-top: 0px; top: 0px; left: 0px; bottom: 0px; overflow: hidden !important; right: 0px; z-index: 999999; }
 #loading-center { width: 100%; height: 100%; position: relative; }
 .loader { width: 3em; height: 3em; margin: auto; left: 0; right: 0; top: 0; bottom: 0; position: absolute; }
 @-webkit-keyframes rotate {

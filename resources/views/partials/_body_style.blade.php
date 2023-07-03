@@ -29,10 +29,9 @@
     <link href="{{ asset('vendor/fullcalendar/timegrid/main.css') }}" rel='stylesheet' />
     <link href="{{ asset('vendor/fullcalendar/list/main.css') }}" rel='stylesheet' />
 
-    @if(isset($assets) && (in_array('datatable',$assets) || in_array('datatable_builder',$assets)))
-        <link rel="stylesheet" href="{{ asset("vendor/datatables/css/dataTables.bootstrap4.min.css") }}">
-        <link rel="stylesheet" href="{{ asset('vendor/datatables/css/buttons.bootstrap4.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('vendor/datatables/css/select.bootstrap4.min.css') }}">
-    @endif
+
+    <link rel="stylesheet" href="{{ asset("vendor/datatables/css/dataTables.bootstrap4.min.css") }}">
+    <link rel="stylesheet" href="{{ asset('vendor/datatables/css/buttons.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('vendor/datatables/css/select.bootstrap4.min.css') }}">
     @yield('head')
 </head>

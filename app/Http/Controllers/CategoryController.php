@@ -19,7 +19,8 @@ class CategoryController extends Controller
         $pageTitle = trans('messages.list_form_title',['form' => trans('messages.category')  ]);
         $auth_user = authSession();
         $assets = ['datatable_builder'];
-        return $dataTable->render('category.index', compact('pageTitle','auth_user','assets'));
+        $catagory = Category::all();
+        return view('category.index', compact('catagory','pageTitle','auth_user','assets'));
     }
 
     /**
