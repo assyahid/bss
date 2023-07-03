@@ -41,10 +41,10 @@ Route::group(['middleware' => ['auth', 'verified']], function()
     Route::get('users/view/{id}','UserController@show')->name('users.view');
     Route::get('users/delete/{id}','UserController@destroy')->name('users.delete');
 
-    Route::resource('category','CategoryController');
-    Route::get('category/edit/{id}','CategoryController@create')->name('category.edit');
-    Route::get('category/view/{id}','CategoryController@show')->name('category.view');
-    Route::get('category/delete/{id}','CategoryController@destroy')->name('category.delete');
+    Route::resource('pasien','PasienController');
+    Route::get('pasien/edit/{id}','PasienController@create')->name('pasien.edit');
+    Route::get('pasien/view/{id}','PasienController@show')->name('pasien.view');
+    Route::get('pasien/delete/{id}','PasienController@destroy')->name('pasien.delete');
 
     Route::resource('service','ServiceController');
     Route::get('service/edit/{id}','ServiceController@create')->name('service.edit');
@@ -80,7 +80,7 @@ Route::group(['middleware' => ['auth', 'verified']], function()
     Route::get('e-commerce/wish-list','EcommerceController@wishList')->name('wish.list');
     Route::get('e-commerce/checkout','EcommerceController@checkOut')->name('checkout');
     Route::get('e-commerce/product-detail','EcommerceController@productDetail')->name('productDetail');
-  
+
     Route::resource('board','BoardController');
     Route::get('board/edit/{id}','BoardController@create')->name('board.edit');
     Route::get('board/view/{id}','BoardController@show')->name('board.view');
@@ -99,10 +99,10 @@ Route::group(['middleware' => ['auth', 'verified']], function()
     Route::get('/mail', 'MailController@mail')->name('mail');
     Route::get('/compose-mail', 'MailController@composeMail')->name('compose-mail');
 
-    //Todo 
+    //Todo
     Route::get('/todo', 'TodoController@index')->name('todo.index');
 
-    //Todo 
+    //Todo
     Route::get('/chat', 'ChatController@index')->name('chat.index');
 
     //UI elements

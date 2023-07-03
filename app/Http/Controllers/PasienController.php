@@ -6,21 +6,20 @@ use Illuminate\Http\Request;
 use App\DataTables\CategoryDataTable;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Validator;
-use \App\Category;
-class CategoryController extends Controller
+use \App\Pasien;
+class PasienController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(CategoryDataTable $dataTable)
+    public function index()
     {
         $pageTitle = trans('messages.list_form_title',['form' => trans('messages.category')  ]);
         $auth_user = authSession();
-        $assets = ['datatable_builder'];
-        $catagory = Category::all();
-        return view('category.index', compact('catagory','pageTitle','auth_user','assets'));
+        $pasien = Pasien::all();
+        return view('pasien.index', compact('pasien','auth_user'));
     }
 
     /**
@@ -32,12 +31,12 @@ class CategoryController extends Controller
     {
         if($id == '-1'){
             $pageTitle = trans('messages.add_button_form',['form' => trans('messages.category')]);
-            $categorydata = new Category;
+            $categorydata = new Pasien;
         }else{
             $pageTitle = trans('messages.update_form_title',['form'=>trans('messages.category')]);
-            $categorydata = Category::find($id);
+            $categorydata = Pasien::find($id);
         }
-        return view('category.create', compact('pageTitle' ,'categorydata' ));
+        return view('pasien.create', compact('pageTitle' ,'categorydata' ));
     }
 
     /**
@@ -56,13 +55,13 @@ class CategoryController extends Controller
            return redirect()->back()->withInput()->with('errors', $validator->errors()->first());
         }
         $data['status'] = '1';
-        $result = Category::updateOrCreate(['id' => $data['id'] ],$data);
+        $result = Pasien::updateOrCreate(['id' => $data['id'] ],$data);
 
         $message = trans('messages.update_form',['form' => trans('messages.category')]);
         if($result->wasRecentlyCreated){
             $message = trans('messages.save_form',['form' => trans('messages.category')]);
         }
-        return redirect(route('category.index'))->withSuccess($message);
+        return redirect(route('pasien.index'))->withSuccess($message);
     }
 
     /**

@@ -66,17 +66,27 @@
 <script>
     $(document).ready( function () {
         $('#datatable').DataTable({
-            lengthMenu: [[10, 50, 100, 500, -1], [10, 50, 100, 500, "All"]],
-            sDom : "R"+"<'row align-items-center pt-3 px-4'<'col-md-2' l><'col-md-4' B><'col-md-6' fr>>"+"<'row' <'col-md-12 table-responsive' t>>" +"<'row p-4'<'col-sm-6'i><'col-sm-6 text-sm-center'p>>",
-            buttons : [
-                {extend : 'print', text : '<i class="fa fa-print"></i> Print', className: 'btn btn-primary btn-sm'},
-                {extend : 'csv', text : '<i class="fa fa-file"></i> CSV', className: 'btn btn-primary btn-sm'},
-            ],
+            // lengthMenu: [[10, 50, 100, 500, -1], [10, 50, 100, 500, "All"]],
+            // sDom : "R"+"<'row align-items-center pt-3 px-4'<'col-md-2' l><'col-md-4' B><'col-md-6' fr>>"+"<'row' <'col-md-12 table-responsive' t>>" +"<'row p-4'<'col-sm-6'i><'col-sm-6 text-sm-center'p>>",
+            // buttons : [
+            //     {extend : 'print', text : '<i class="fa fa-print"></i> Print', className: 'btn btn-primary btn-sm'},
+            //     {extend : 'csv', text : '<i class="fa fa-file"></i> CSV', className: 'btn btn-primary btn-sm'},
+            // ],
 
         });
 
-    } );
 
+
+    } );
+    function baru() {
+        var url = window.open("{{ route('pasien.create') }}", "_blank", "top=100, left=100, width=800, height=500");
+        var title="Input Pesanan Pemeriksaan";
+        popUp(url,title);
+
+    }
+    function tutup() {
+        window.close();
+    }
     </script>
 
 <script src="{{ asset('assets/js/custom.js') }}"></script>

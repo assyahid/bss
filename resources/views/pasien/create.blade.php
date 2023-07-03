@@ -11,11 +11,11 @@
                                 <h4 class="card-title">{{ isset($pageTitle) ? $pageTitle : trans('messages.form') }}</h4>
                             </div>
                             <div class="iq-card-header-toolbar d-flex align-items-center">
-                                <a href="{{ route('category.index') }}" class="float-right mr-1 btn btn-sm btn-primary"><i class="ri-arrow-drop-left-line"></i>{{ trans('messages.back') }}</a> 
+                                <a href="{{ route('pasien.index') }}" class="float-right mr-1 btn btn-sm btn-primary"><i class="ri-arrow-drop-left-line"></i>{{ trans('messages.back') }}</a>
                             </div>
                         </div>
                         <div class="iq-card-body">
-                            {{ Form::model($categorydata,['method' => 'POST','route'=>'category.store', 'data-toggle'=>"validator" ,'id'=>'category'] ) }}
+                            {{ Form::model($categorydata,['method' => 'POST','route'=>'pasien.store', 'data-toggle'=>"validator" ,'id'=>'category'] ) }}
                                 {{ Form::hidden('id') }}
                                 <div class="row">
                                     <div class="form-group col-md-12">
@@ -23,15 +23,17 @@
                                         {{ Form::text('name',old('name'),['placeholder' => trans('messages.name'),'class' =>'form-control','required']) }}
                                         <small class="help-block with-errors text-danger"></small>
                                     </div>
-                                   
+
                                     <div class="form-group col-md-12">
                                         {{ Form::label('color',trans('messages.color'), ['class' => 'form-control-label']) }}
                                         {{ Form::color('color',null, ['placeholder' => trans('messages.color'),'class' =>'form-control' ,'id' => 'color']) }}
                                     </div>
-                                    
+
                                 </div>
                                 {{ Form::submit( trans('messages.save'), ['class'=>'btn btn-md btn-primary']) }}
                             {{ Form::close() }}
+                            <button type='button'  onclick='tutup()' class="float-right mr-1 btn btn-sm btn-primary"><i class="fa fa-plus-circle"></i>Tambah Identitas</button>
+
                         </div>
                     </div>
                 </div>
@@ -41,5 +43,5 @@
 @endsection
 @section('body_bottom')
 <script>
-</script>        
+</script>
 @endsection
